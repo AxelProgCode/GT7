@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classifiche GT7</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto Mono', monospace;
+        }
+        .bg-gt-gradient {
+            background: linear-gradient(135deg, #0f172a 0%, #1f2937 100%);
+        }
+        .header-gradient {
+            background: linear-gradient(90deg, #1d4ed8 0%, #6366f1 100%);
+        }
+        .circuit-card {
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+        .circuit-card:hover {
+            transform: translateY(-5px);
+        }
+        .modal-overlay {
+            background-color: rgba(0, 0, 0, 0.75);
+            -webkit-backdrop-filter: blur(8px);
+            backdrop-filter: blur(8px);
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-100 min-h-screen flex flex-col items-center p-4 bg-gt-gradient">
+
+    <!-- Sezione Intestazione -->
+    <div class="w-full max-w-5xl text-center my-12">
+        <h1 class="text-6xl font-extrabold text-white mb-2 tracking-wide">
+            CLASSIFICHE GT7
+        </h1>
+        <p class="text-lg text-gray-400">Seleziona un circuito per visualizzare i tempi</p>
+    </div>
+
+    <!-- Elenco dei Circuiti -->
+    <div class="w-full max-w-5xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 p-4">
+
+        <!-- Alsace Village -->
+        <a href="#" data-circuit="alsace" class="circuit-card bg-gray-800 rounded-2xl shadow-xl p-6 flex flex-col items-center text-center border border-gray-700">
+            <img src="img/circuit/Alsace Village.png">
+            <img src="https://gt-engine.com/gt7/tracks/images/md/alsace-village.png">
+            <h2 class="text-3xl font-bold text-white mb-2">Alsace Village</h2>
+            <p class="text-gray-400">Francia</p>
+            <img src="https://flagcdn.com/fr.svg" width="25">
+            <img src="img/car/Bugatti VGT.png">
+            <img src="img/logo/bugatti.png" class="h-8 mr-1">
+            <h2 class="text-xl font-bold text-white">Bugatti</h2>
+            <p class="text-gray-400">VGT</p>
+        </a>
+        
+        <!-- Autodromo Lago Maggiore -->
+        <a href="#" data-circuit="lago-maggiore" class="circuit-card bg-gray-800 rounded-2xl shadow-xl p-6 flex flex-col items-center text-center border border-gray-700">
+            <img src="img/circuit/Autodromo Lago Maggiore.png">
+            <img src="https://gt-engine.com/gt7/tracks/images/md/lago-maggiore-full.png">
+            <h2 class="text-3xl font-bold text-white mb-2">Autodromo Lago Maggiore</h2>
+            <p class="text-gray-400">Italia</p>
+            <img src="https://flagcdn.com/it.svg" width="25">
+            <img src="img/car/Lamborghini Huracán GT3 '15.png">
+            <img src="img/logo/lamborghini.png" class="h-8 mr-1">
+            <h2 class="text-xl font-bold text-white">Lamborghini</h2>
+            <p class="text-gray-400">Huracán GT3 '19</p>
+        </a>
+
+        <!-- Autodromo Nazionale Monza -->
+        <a href="#" data-circuit="monza" class="circuit-card bg-gray-800 rounded-2xl shadow-xl p-6 flex flex-col items-center text-center border border-gray-700">
+            <img src="img/circuit/Autodromo Nazionale Monza.png">
+            <img src="https://gt-engine.com/gt7/tracks/images/md/monza.png">
+            <h2 class="text-3xl font-bold text-white mb-2">Autodromo Nazionale Monza</h2>
+            <p class="text-gray-400">Italia</p>
+            <img src="https://flagcdn.com/it.svg" width="25">
+            <img src="img/car/Ferrari F8 Tributo '19.png">
+            <img src="img/logo/ferrari.png" class="h-8 mr-1">
+            <h2 class="text-xl font-bold text-white">Ferrari</h2>
+            <p class="text-gray-400">F8 Tributo '19</p>
+        </a>
+
+        <!-- Autódromo de Interlagos -->
+        <a href="#" data-circuit="interlagos" class="circuit-card bg-gray-800 rounded-2xl shadow-xl p-6 flex flex-col items-center text-center border border-gray-700">
+            <img src="img/circuit/Autódromo de Interlagos.png">
+            <img src="https://gt-engine.com/gt7/tracks/images/md/interlagos.png">
+            <h2 class="text-3xl font-bold text-white mb-2">Autodromo de Interlagos</h2>
+            <p class="text-gray-400">Brasile</p>
+            <img src="https://flagcdn.com/br.svg" width="25">
+            <img src="img/car/Chevrolet Corvette CX.R VGT Concept.png">
+            <img src="img/logo/chevrolet.png" class="h-8 mr-1">
+            <h2 class="text-xl font-bold text-white">Chevrolet</h2>
+            <p class="text-gray-400">Corvette CX.R VGT Concept</p>
+        </a>
+
+        <!-- Autopolis International Racing Course -->
+        <a href="#" data-circuit="autopolis" class="circuit-card bg-gray-800 rounded-2xl shadow-xl p-6 flex flex-col items-center text-center border border-gray-700">
+            <img src="img/circuit/Autopolis International Racing Course.png">
+            <img src="https://gt-engine.com/gt7/tracks/images/md/autopolis.png">
+            <h2 class="text-3xl font-bold text-white mb-2">Autopolis International Racing Course</h2>
+            <p class="text-gray-400">Giappone</p>
+            <img src="https://flagcdn.com/jp.svg" width="25">
+            <img src="img/car/Honda NSX CONCEPT-GT '16.png">
+            <img src="img/logo/honda.png" class="h-8 mr-1">
+            <h2 class="text-xl font-bold text-white">Honda</h2>
+            <p class="text-gray-400">NSX CONCEPT-GT '16</p>
+        </a>
+        
+        <!-- Circuit de Barcelona-Catalunya -->
+        <a href="#" data-circuit="barcelona" class="circuit-card bg-gray-800 rounded-2xl shadow-xl p-6 flex flex-col items-center text-center border border-gray-700">
+            <img src="img/circuit/Circuit de Barcelona-Catalunya.png">
+            <img src="https://gt-engine.com/gt7/tracks/images/md/barcelona-catalunya-gp.png">
+            <h2 class="text-3xl font-bold text-white mb-2">Circuit de Barcelona-Catalunya</h2>
+            <p class="text-gray-400">Spagna</p>
+            <img src="https://flagcdn.com/es.svg" width="25">
+            <img src="img/car/Pagani Zonda R '09.png">
+            <img src="img/logo/pagani.png" class="h-8 mr-1">
+            <h2 class="text-xl font-bold text-white">Pagani</h2>
+            <p class="text-gray-400">Zonda R '09</p>
+        </a>
+        
+        <!-- Circuit de Sainte-Croix -->
+        <a href="#" data-circuit="sainte-croix" class="circuit-card bg-gray-800 rounded-2xl shadow-xl p-6 flex flex-col items-center text-center border border-gray-700">
+            <img src="img/circuit/Circuit de Sainte-Croix.png">
+            <img src="https://gt-engine.com/gt7/tracks/images/md/sainte-croix-a.png">
+            <h2 class="text-3xl font-bold text-white mb-2">Circuit de Sainte-Croix</h2>
+            <p class="text-gray-400">Francia</p>
+            <img src="https://flagcdn.com/fr.svg" width="25">
+            <img src="img/car/Renault Mégane Trophy '11.png">
+            <img src="img/logo/renault.png" class="h-8 mr-1">
+            <h2 class="text-xl font-bold text-white mb-2">Renault</h2>
+            <p class="text-gray-400">Mégane Trophy '11</p>
+        </a>
+        
+        <!-- Circuit de Spa-Francorchamps -->
+        <a href="#" data-circuit="spa" class="circuit-card bg-gray-800 rounded-2xl shadow-xl p-6 flex flex-col items-center text-center border border-gray-700">
+            <img src="img/circuit/Circuit de Spa-Francorchamps.png">
+            <img src="https://gt-engine.com/gt7/tracks/images/md/spa-francorchamps.png">
+            <h2 class="text-3xl font-bold text-white mb-2">Circuit de Spa-Francorchamps</h2>
+            <p class="text-gray-400">Belgio</p>
+            <img src="https://flagcdn.com/be.svg" width="25">
+            <img src="img/car/Porsche 911 GT3 RS (992) '22.png">
+            <img src="img/logo/porsche.png" class="h-8 mr-1">
+            <h2 class="text-xl font-bold text-white mb-2">Porsche</h2>
+            <p class="text-gray-400">911 GT3 RS (992) '22</p>
+        </a>
+        
+        <!-- Circuito 24 Ore di Le Mans -->
+        <a href="#" data-circuit="lemans" class="circuit-card bg-gray-800 rounded-2xl shadow-xl p-6 flex flex-col items-center text-center border border-gray-700">
+            <img src="img/circuit/Circuito 24 Ore di Le Mans.png">
+            <img src="https://gt-engine.com/gt7/tracks/images/md/24-heures-du-mans.png">
+            <h2 class="text-3xl font-bold text-white mb-2">Circuito 24 Ore di Le Mans</h2>
+            <p class="text-gray-400">Francia</p>
+            <img src="https://flagcdn.com/fr.svg" width="25">
+            <img src="img/car/Alpine VGT Race.png">
+            <img src="img/logo/alpine.png" class="h-8 mr-1">
+            <h2 class="text-xl font-bold text-white mb-2">Alpine</h2>
+            <p class="text-gray-400">VGT Race</p>
+        </a>
+        
+        <!-- Daytona Circuit -->
+        <a href="#" data-circuit="daytona" class="circuit-card bg-gray-800 rounded-2xl shadow-xl p-6 flex flex-col items-center text-center border border-gray-700">
+            <img src="img/circuit/Daytona Circuit.png">
+            <img src="https://gt-engine.com/gt7/tracks/images/md/daytona-road.png">
+            <h2 class="text-3xl font-bold text-white mb-2">Daytona Circuit</h2>
+            <p class="text-gray-400">USA</p>
+            <img src="https://flagcdn.com/us.svg" width="25">
+            <img src="img/car/Ford GT Race Car '18.png">
+            <img src="img/logo/ford.png" class="h-8 mr-1">
+            <h2 class="text-xl font-bold text-white mb-2">Ford</h2>
+            <p class="text-gray-400">GT Race Car '18</p>
+        </a>
+        
+        <!-- Deep Forest Raceway -->
+        <a href="#" data-circuit="deep-forest" class="circuit-card bg-gray-800 rounded-2xl shadow-xl p-6 flex flex-col items-center text-center border border-gray-700">
+            <img src="img/circuit/Deep Forest Raceway.png">
+            <img src="https://gt-engine.com/gt7/tracks/images/md/deep-forest.png">
+            <h2 class="text-3xl font-bold text-white mb-2">Deep Forest Raceway</h2>
+            <p class="text-gray-400">Giappone</p>
+            <img src="https://flagcdn.com/jp.svg" width="25">
+            <img src="img/car/Mazda RX-Vision GT3 Concept.png">
+            <img src="img/logo/mazda.png" class="h-8 mr-1">
+            <h2 class="text-xl font-bold text-white mb-2">Mazda</h2>
+            <p class="text-gray-400">RX-Vision GT3 Concept</p>
+        </a>
+        
+        <!-- Dragon Trail -->
+        <a href="#" data-circuit="dragon-trail" class="circuit-card bg-gray-800 rounded-2xl shadow-xl p-6 flex flex-col items-center text-center border border-gray-700">
+            <img src="img/circuit/Dragon Trail.png">
+            <img src="https://gt-engine.com/gt7/tracks/images/md/dragon-trail-seaside.png">
+            <h2 class="text-3xl font-bold text-white mb-2">Dragon Trail</h2>
+            <p class="text-gray-400">Croazia</p>
+            <img src="https://flagcdn.com/hr.svg" width="25">
+            <img src="img/car/Audi R8 LMS Evo '19.png">
+            <img src="img/logo/audi.png" class="h-8 mr-1">
+            <h2 class="text-xl font-bold text-white mb-2">Audi</h2>
+            <p class="text-gray-400">R8 LMS Evo '19</p>
+        </a>
+        
+        <!-- Eiger Nordwand -->
+        <a href="#" data-circuit="eiger-nordwand" class="circuit-card bg-gray-800 rounded-2xl shadow-xl p-6 flex flex-col items-center text-center border border-gray-700">
+            <img src="img/circuit/Eiger Nordwand.png">
+            <img src="https://gt-engine.com/gt7/tracks/images/md/eiger-nordwand.png">
+            <h2 class="text-3xl font-bold text-white mb-2">Eiger Nordwand</h2>
+            <p class="text-gray-400">Svizzera</p>
+            <img src="https://flagcdn.com/ch.svg" width="25">
+            <img src="img/car/KTM X-BOW R '12.png">
+            <img src="img/logo/ktm.png" class="h-8 mr-1">
+            <h2 class="text-xl font-bold text-white mb-2">KTM</h2>
+            <p class="text-gray-400">X-BOW R '12</p>
+        </a>
+        
+        <!-- Fuji International Speedway -->
+        
+        <!-- Grand Valley -->
+        
+        <!-- High Speed Ring -->
+        
+        <!-- Kyoto Driving Park -->
+        
+        <!-- Michelin Raceway Road Atlanta -->
+        
+        <!-- Mount Panorama Motor Racing Circuit -->
+        
+        <!-- Nürburgring Nordschleife -->
+        <a href="#" data-circuit="nurburgring" class="circuit-card bg-gray-800 rounded-2xl shadow-xl p-6 flex flex-col items-center text-center border border-gray-700">
+            <img src="img/circuit/Nürburgring.png">
+            <img src="https://gt-engine.com/gt7/tracks/images/md/nurburgring-nordschleife.png">
+            <h2 class="text-3xl font-bold text-white mb-2">Nürburgring Nordschleife</h2>
+            <p class="text-gray-400">Germania</p>
+            <img src="https://flagcdn.com/de.svg" width="25">
+            <img src="img/car/BMW M6 GT3 Endurance Model '16.png">
+            <img src="img/logo/bmw.png" class="h-8 mr-1">
+            <h2 class="text-xl font-bold text-white mb-2">BMW</h2>
+            <p class="text-gray-400">M6 GT3 Endurance Model '16</p>
+        </a>
+        
+        <!-- Nürburgring GP-->
+        <a href="#" data-circuit="nurburgring" class="circuit-card bg-gray-800 rounded-2xl shadow-xl p-6 flex flex-col items-center text-center border border-gray-700">
+            <img src="img/circuit/Nürburgring.png">
+            <img src="https://gt-engine.com/gt7/tracks/images/md/nurburgring-gp.png">
+            <h2 class="text-3xl font-bold text-white mb-2">Nürburgring Nordschleife</h2>
+            <p class="text-gray-400">Germania</p>
+            <img src="https://flagcdn.com/de.svg" width="25">
+            <img src="img/car/Mercedes AMG GT Black Series '20.png">
+            <img src="img/logo/amg.png" class="h-8 mr-1">
+            <h2 class="text-xl font-bold text-white mb-2">Mercedes AMG</h2>
+            <p class="text-gray-400">GT Black Series '20</p>
+        </a>
+        
+        <!-- Red Bull Ring -->
+        <a href="#" data-circuit="red-bull-ring" class="circuit-card bg-gray-800 rounded-2xl shadow-xl p-6 flex flex-col items-center text-center border border-gray-700">
+            <img src="img/circuit/Red Bull Ring.png">
+            <img src="https://gt-engine.com/gt7/tracks/images/md/red-bull-ring.png">
+            <h2 class="text-3xl font-bold text-white mb-2">Red Bull Ring</h2>
+            <p class="text-gray-400">Austria</p>
+            <img src="https://flagcdn.com/at.svg" width="25">
+            <img src="img/car/Red Bull X2014 Standard.png">
+            <img src="img/logo/altro.png" class="h-8 mr-1">
+            <h2 class="text-xl font-bold text-white mb-2">Red Bull</h2>
+            <p class="text-gray-400">X2014 Standard</p>
+        </a>
+        
+        <!-- Sardegna Circuit -->
+        <a href="#" data-circuit="sardegna" class="circuit-card bg-gray-800 rounded-2xl shadow-xl p-6 flex flex-col items-center text-center border border-gray-700">
+            <img src="img/circuit/Sardegna Circuit.png">
+            <img src="https://gt-engine.com/gt7/tracks/images/md/sardegna-road-a.png">
+            <h2 class="text-3xl font-bold text-white mb-2">Sardegna Circuit</h2>
+            <p class="text-gray-400">Italia</p>
+            <img src="https://flagcdn.com/it.svg" width="25">
+            <img src="img/car/Alfa Romeo Giulia GTAm '20.png">
+            <img src="img/logo/alfa romeo.png" class="h-8 mr-1">
+            <h2 class="text-xl font-bold text-white mb-2">Alfa Romeo</h2>
+            <p class="text-gray-400">Giulia GTAm '20</p>
+        </a>
+        
+        <!-- Suzuka Circuit -->
+        
+        <!-- Tokyo Expressway -->
+        
+        <!-- Trial Mountain Circuit -->
+        
+        <!-- Watkins Glen -->
+
+        <!-- Willow Springs International Raceway -->
+        
+    </div>
+
+    <!-- Modale per la Classifica (nascosta di default) -->
+    <div id="leaderboard-modal" class="modal-overlay hidden fixed inset-0 z-50 flex items-center justify-center p-4">
+        <div class="modal-content w-full max-w-4xl bg-gray-800 rounded-2xl shadow-xl p-8 border border-gray-700 relative">
+            <button id="close-modal-btn" class="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+            <h2 id="modal-title" class="text-4xl font-extrabold text-white mb-6 text-center"></h2>
+            <div class="overflow-x-auto rounded-lg">
+                <table class="min-w-full divide-y divide-gray-700">
+                    <thead class="bg-gray-900 header-gradient">
+                        <tr>
+                            <th scope="col" class="px-6 py-4 text-center text-sm font-bold text-white uppercase tracking-wider rounded-tl-lg">#</th>
+                            <th scope="col" class="px-6 py-4 text-left text-sm font-bold text-white uppercase tracking-wider">Pilota</th>
+                            <th scope="col" class="px-6 py-4 text-left text-sm font-bold text-white uppercase tracking-wider">Tempo</th>
+                            <th scope="col" class="px-6 py-4 text-left text-sm font-bold text-white uppercase tracking-wider rounded-tr-lg">Data e Ora</th>
+                        </tr>
+                    </thead>
+                    <tbody id="modal-table-body" class="bg-gray-800 divide-y divide-gray-700">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Funzione per convertire una stringa di tempo "mm:ss.dcm" in millisecondi
+        const parseTime = (timeString) => {
+            const parts = timeString.split(/[:.]/);
+            const minutes = parseInt(parts[0], 10);
+            const seconds = parseInt(parts[1], 10);
+            const milliseconds = parseInt(parts[2], 10);
+            return (minutes * 60000) + (seconds * 1000) + milliseconds;
+        };
+
+        // Funzione per formattare i millisecondi in mm:ss.dcm
+        const formatTime = (ms) => {
+            const minutes = Math.floor(ms / 60000);
+            const seconds = Math.floor((ms % 60000) / 1000);
+            const milliseconds = ms % 1000;
+            return `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}.${String(milliseconds).padStart(3, '0')}`;
+        };
+
+        // Dati della classifica per ogni circuito
+        const leaderboards = {
+            alsace: {
+            title: "Classifica",
+            subtitle: "Alsace Village",
+            data: [
+                { pilota: "Simone Plona", time: parseTime("01:23.456"), data: "02/09/25", ora: "11:00" },
+                { pilota: "Diego Plona", time: parseTime("01:24.789"), data: "02/09/25", ora: "12:30" }
+            ]
+            },
+            "lago-maggiore": {
+            title: "Classifica",
+            subtitle: "Autodromo Lago Maggiore",
+            data: [
+                { pilota: "Simone Plona", time: parseTime("01:30.123"), data: "02/09/25", ora: "13:00" },
+                { pilota: "Diego Plona", time: parseTime("01:31.456"), data: "02/09/25", ora: "14:00" }
+            ]
+            },
+            monza: {
+            title: "Classifica",
+            subtitle: "Autodromo Nazionale Monza",
+            data: [
+                { pilota: "Simone Plona", time: parseTime("01:15.520"), data: "02/09/25", ora: "10:30" },
+                { pilota: "Diego Plona", time: parseTime("01:16.180"), data: "02/09/25", ora: "15:22" }
+            ]
+            },
+            interlagos: {
+            title: "Classifica",
+            subtitle: "Autodromo de Interlagos",
+            data: [
+                { pilota: "Simone Plona", time: parseTime("01:28.900"), data: "02/09/25", ora: "16:00" },
+                { pilota: "Diego Plona", time: parseTime("01:29.800"), data: "02/09/25", ora: "17:00" }
+            ]
+            },
+            autopolis: {
+            title: "Classifica",
+            subtitle: "Autopolis International Racing Course",
+            data: [
+                { pilota: "Simone Plona", time: parseTime("01:35.000"), data: "02/09/25", ora: "18:00" },
+                { pilota: "Diego Plona", time: parseTime("01:36.200"), data: "02/09/25", ora: "19:00" }
+            ]
+            },
+            barcelona: {
+            title: "Classifica",
+            subtitle: "Circuit de Barcelona-Catalunya",
+            data: [
+                { pilota: "Simone Plona", time: parseTime("01:32.500"), data: "02/09/25", ora: "20:00" },
+                { pilota: "Diego Plona", time: parseTime("01:33.700"), data: "02/09/25", ora: "21:00" }
+            ]
+            },
+            "sainte-croix": {
+            title: "Classifica",
+            subtitle: "Circuit de Sainte-Croix",
+            data: [
+                { pilota: "Simone Plona", time: parseTime("01:40.000"), data: "02/09/25", ora: "22:00" },
+                { pilota: "Diego Plona", time: parseTime("01:41.200"), data: "02/09/25", ora: "23:00" }
+            ]
+            },
+            spa: {
+            title: "Classifica",
+            subtitle: "Circuit de Spa-Francorchamps",
+            data: [
+                { pilota: "Simone Plona", time: parseTime("01:15.520"), data: "02/09/25", ora: "10:30" },
+                { pilota: "Diego Plona", time: parseTime("01:16.180"), data: "02/09/25", ora: "15:22" }
+            ]
+            },
+            lemans: {
+            title: "Classifica",
+            subtitle: "Circuito 24 Ore di Le Mans",
+            data: [
+                { pilota: "Simone Plona", time: parseTime("03:25.000"), data: "02/09/25", ora: "09:00" },
+                { pilota: "Diego Plona", time: parseTime("03:26.500"), data: "02/09/25", ora: "10:00" }
+            ]
+            },
+            daytona: {
+            title: "Classifica",
+            subtitle: "Daytona Circuit",
+            data: [
+                { pilota: "Simone Plona", time: parseTime("01:45.000"), data: "02/09/25", ora: "08:00" },
+                { pilota: "Diego Plona", time: parseTime("01:46.200"), data: "02/09/25", ora: "08:30" }
+            ]
+            },
+            "deep-forest": {
+            title: "Classifica",
+            subtitle: "Deep Forest Raceway",
+            data: [
+                { pilota: "Simone Plona", time: parseTime("01:20.000"), data: "02/09/25", ora: "07:00" },
+                { pilota: "Diego Plona", time: parseTime("01:21.500"), data: "02/09/25", ora: "07:30" }
+            ]
+            },
+            "dragon-trail": {
+            title: "Classifica",
+            subtitle: "Dragon Trail",
+            data: [
+                { pilota: "Simone Plona", time: parseTime("01:18.000"), data: "02/09/25", ora: "06:00" },
+                { pilota: "Diego Plona", time: parseTime("01:19.200"), data: "02/09/25", ora: "06:30" }
+            ]
+            },
+            "eiger-nordwand": {
+            title: "Classifica",
+            subtitle: "Eiger Nordwand",
+            data: [
+                { pilota: "Simone Plona", time: parseTime("01:22.000"), data: "02/09/25", ora: "05:00" },
+                { pilota: "Diego Plona", time: parseTime("01:23.500"), data: "02/09/25", ora: "05:30" }
+            ]
+            },
+            "nurburgring": {
+            title: "Classifica",
+            subtitle: "Nürburgring Nordschleife",
+            data: [
+                { pilota: "Simone Plona", time: parseTime("06:45.000"), data: "02/09/25", ora: "04:00" },
+                { pilota: "Diego Plona", time: parseTime("06:47.500"), data: "02/09/25", ora: "04:30" }
+            ]
+            },
+            "nurburgring-gp": {
+            title: "Classifica",
+            subtitle: "Nürburgring GP",
+            data: [
+                { pilota: "Simone Plona", time: parseTime("01:58.000"), data: "02/09/25", ora: "03:00" },
+                { pilota: "Diego Plona", time: parseTime("01:59.500"), data: "02/09/25", ora: "03:30" }
+            ]
+            },
+            "red-bull-ring": {
+            title: "Classifica",
+            subtitle: "Red Bull Ring",
+            data: [
+                { pilota: "Simone Plona", time: parseTime("01:10.000"), data: "02/09/25", ora: "02:00" },
+                { pilota: "Diego Plona", time: parseTime("01:11.500"), data: "02/09/25", ora: "02:30" }
+            ]
+            },
+            sardegna: {
+            title: "Classifica",
+            subtitle: "Sardegna Circuit",
+            data: [
+                { pilota: "Simone Plona", time: parseTime("01:25.000"), data: "02/09/25", ora: "01:00" },
+                { pilota: "Diego Plona", time: parseTime("01:26.500"), data: "02/09/25", ora: "01:30" }
+            ]
+            },
+            fuji: {
+            title: "Classifica",
+            subtitle: "Fuji International Speedway",
+            data: [
+                { pilota: "Simone Plona", time: parseTime("01:29.000"), data: "02/09/25", ora: "12:00" },
+                { pilota: "Diego Plona", time: parseTime("01:30.500"), data: "02/09/25", ora: "12:30" }
+            ]
+            },
+            "grand-valley": {
+            title: "Classifica",
+            subtitle: "Grand Valley",
+            data: [
+                { pilota: "Simone Plona", time: parseTime("01:34.000"), data: "02/09/25", ora: "13:00" },
+                { pilota: "Diego Plona", time: parseTime("01:35.500"), data: "02/09/25", ora: "13:30" }
+            ]
+            },
+            "high-speed-ring": {
+            title: "Classifica",
+            subtitle: "High Speed Ring",
+            data: [
+                { pilota: "Simone Plona", time: parseTime("01:12.000"), data: "02/09/25", ora: "14:00" },
+                { pilota: "Diego Plona", time: parseTime("01:13.500"), data: "02/09/25", ora: "14:30" }
+            ]
+            },
+            kyoto: {
+            title: "Classifica",
+            subtitle: "Kyoto Driving Park",
+            data: [
+                { pilota: "Simone Plona", time: parseTime("01:16.000"), data: "02/09/25", ora: "15:00" },
+                { pilota: "Diego Plona", time: parseTime("01:17.500"), data: "02/09/25", ora: "15:30" }
+            ]
+            },
+            atlanta: {
+            title: "Classifica",
+            subtitle: "Michelin Raceway Road Atlanta",
+            data: [
+                { pilota: "Simone Plona", time: parseTime("01:21.000"), data: "02/09/25", ora: "16:00" },
+                { pilota: "Diego Plona", time: parseTime("01:22.500"), data: "02/09/25", ora: "16:30" }
+            ]
+            },
+            "mount-panorama": {
+            title: "Classifica",
+            subtitle: "Mount Panorama Motor Racing Circuit",
+            data: [
+                { pilota: "Simone Plona", time: parseTime("02:05.000"), data: "02/09/25", ora: "17:00" },
+                { pilota: "Diego Plona", time: parseTime("02:06.500"), data: "02/09/25", ora: "17:30" }
+            ]
+            },
+            suzuka: {
+            title: "Classifica",
+            subtitle: "Suzuka Circuit",
+            data: [
+                { pilota: "Simone Plona", time: parseTime("01:50.000"), data: "02/09/25", ora: "18:00" },
+                { pilota: "Diego Plona", time: parseTime("01:51.500"), data: "02/09/25", ora: "18:30" }
+            ]
+            },
+            tokyo: {
+            title: "Classifica",
+            subtitle: "Tokyo Expressway",
+            data: [
+                { pilota: "Simone Plona", time: parseTime("01:14.000"), data: "02/09/25", ora: "19:00" },
+                { pilota: "Diego Plona", time: parseTime("01:15.500"), data: "02/09/25", ora: "19:30" }
+            ]
+            },
+            "trial-mountain": {
+            title: "Classifica",
+            subtitle: "Trial Mountain Circuit",
+            data: [
+                { pilota: "Simone Plona", time: parseTime("01:36.000"), data: "02/09/25", ora: "20:00" },
+                { pilota: "Diego Plona", time: parseTime("01:37.500"), data: "02/09/25", ora: "20:30" }
+            ]
+            },
+            watkins: {
+            title: "Classifica",
+            subtitle: "Watkins Glen",
+            data: [
+                { pilota: "Simone Plona", time: parseTime("01:23.000"), data: "02/09/25", ora: "21:00" },
+                { pilota: "Diego Plona", time: parseTime("01:24.500"), data: "02/09/25", ora: "21:30" }
+            ]
+            },
+            willow: {
+            title: "Classifica",
+            subtitle: "Willow Springs International Raceway",
+            data: [
+                { pilota: "Simone Plona", time: parseTime("01:17.000"), data: "02/09/25", ora: "22:00" },
+                { pilota: "Diego Plona", time: parseTime("01:18.500"), data: "02/09/25", ora: "22:30" }
+            ]
+            }
+        };
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const circuitCards = document.querySelectorAll('.circuit-card');
+            const modal = document.getElementById('leaderboard-modal');
+            const modalTitle = document.getElementById('modal-title');
+            const modalTableBody = document.getElementById('modal-table-body');
+            const closeModalBtn = document.getElementById('close-modal-btn');
+
+            // Funzione per renderizzare la tabella nel modale
+            const renderLeaderboard = (circuitData) => {
+                modalTableBody.innerHTML = '';
+                // Ordina i dati per tempo in ordine crescente
+                const sortedTimes = [...circuitData.data].sort((a, b) => a.time - b.time);
+
+                sortedTimes.forEach((entry, index) => {
+                    const row = document.createElement('tr');
+                    // Applica la classe 'pulsing-glow' solo al primo classificato
+                    const glowClass = index === 0 ? 'pulsing-glow' : '';
+                    row.className = `border-b border-gray-700 hover:bg-gray-700 ${index % 2 === 0 ? 'bg-gray-800' : 'bg-gray-900'} ${glowClass}`;
+                    row.innerHTML = `
+                        <td class="px-6 py-4 whitespace-nowrap text-center text-sm font-medium text-white">${index + 1}</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-300">${entry.pilota}</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-300">${formatTime(entry.time)}</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-300">${entry.data} - ${entry.ora}</td>
+                    `;
+                    modalTableBody.appendChild(row);
+                });
+            };
+
+            // Aggiunge l'evento click a tutte le schede dei circuiti
+            circuitCards.forEach(card => {
+                card.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const circuitId = card.dataset.circuit;
+                    const circuitData = leaderboards[circuitId];
+
+                    if (circuitData) {
+                        modalTitle.textContent = circuitData.title;
+                        renderLeaderboard(circuitData);
+                        modal.classList.remove('hidden');
+                    }
+                });
+            });
+
+            // Chiude il modale cliccando sul pulsante 'X'
+            closeModalBtn.addEventListener('click', () => {
+                modal.classList.add('hidden');
+            });
+            
+            // Chiude il modale cliccando fuori dal suo contenuto
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    modal.classList.add('hidden');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
