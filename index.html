@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="img/icon.png">
     <title>CLASSIFICHE GT7</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
@@ -10,17 +11,18 @@
         body {
             font-family: 'Roboto Mono', monospace;
         }
-        .bg-gt-gradient {
-            background: linear-gradient(135deg, #0f172a 0%, #1f2937 100%);
+        .bg-gt-background {
+            background: black;
         }
         .header-gradient {
-            background: linear-gradient(90deg, #1d4ed8 0%, #6366f1 100%);
+            background: linear-gradient(90deg, black 0%, black 100%);
         }
         .circuit-card {
             transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
         }
         .circuit-card:hover {
             transform: translateY(-5px);
+            border-color: #d0ff02;
         }
         .modal-overlay {
             background-color: rgba(0, 0, 0, 0.75);
@@ -29,11 +31,11 @@
         }
     </style>
 </head>
-<body class="bg-gray-900 text-gray-100 min-h-screen flex flex-col items-center p-4 bg-gt-gradient">
+<body class="bg-black-900 text-gray-100 min-h-screen flex flex-col items-center p-4 bg-gt-background">
 
     <!-- Sezione Intestazione -->
     <div class="w-full max-w-5xl text-center my-12">
-        <h1 class="text-6xl font-extrabold text-white mb-2 tracking-wide">CLASSIFICHE<br>& TEMPI GT7</h1>
+        <h1 class="text-6xl font-extrabold text-[#d0ff02] mb-2 tracking-wide">CLASSIFICHE<br>& TEMPI GT7</h1>
         <p class="text-lg text-gray-400">Seleziona un circuito per visualizzare la classifica</p>
     </div>
 
@@ -45,7 +47,7 @@
             <div class="absolute left-1/2 -translate-x-1/2 top-3 w-48 h-2 rounded-full bg-red-500 shadow-lg"></div>
             <img src="img/circuit/Alsace Village.png">
             <img src="https://gt-engine.com/gt7/tracks/images/md/alsace-village.png">
-            <h2 class="text-3xl font-bold text-white mb-2">Alsace Village</h2>
+            <h2 class="text-3xl font-bold text-[#d0ff02] mb-2">Alsace Village</h2>
             <p class="text-gray-400">Francia</p>
             <img src="https://flagcdn.com/fr.svg" width="25">
             <img src="img/car/Bugatti VGT.png">
@@ -59,7 +61,7 @@
             <div class="absolute left-1/2 -translate-x-1/2 top-3 w-48 h-2 rounded-full bg-green-500 shadow-lg"></div>
             <img src="img/circuit/Autodromo Lago Maggiore.png">
             <img src="https://gt-engine.com/gt7/tracks/images/md/lago-maggiore-full.png">
-            <h2 class="text-3xl font-bold text-white mb-2">Autodromo Lago Maggiore</h2>
+            <h2 class="text-3xl font-bold text-[#d0ff02] mb-2">Autodromo Lago Maggiore</h2>
             <p class="text-gray-400">Italia</p>
             <img src="https://flagcdn.com/it.svg" width="25">
             <img src="img/car/Lamborghini Huracán GT3 '15.png">
@@ -73,7 +75,7 @@
             <div class="absolute left-1/2 -translate-x-1/2 top-3 w-48 h-2 rounded-full bg-green-500 shadow-lg"></div>
             <img src="img/circuit/Autodromo Nazionale Monza.png">
             <img src="https://gt-engine.com/gt7/tracks/images/md/monza.png">
-            <h2 class="text-3xl font-bold text-white mb-2">Autodromo Nazionale Monza</h2>
+            <h2 class="text-3xl font-bold text-[#d0ff02] mb-2">Autodromo Nazionale Monza</h2>
             <p class="text-gray-400">Italia</p>
             <img src="https://flagcdn.com/it.svg" width="25">
             <img src="img/car/Ferrari F8 Tributo '19.png">
@@ -87,7 +89,7 @@
             <div class="absolute left-1/2 -translate-x-1/2 top-3 w-48 h-2 rounded-full bg-red-500 shadow-lg"></div>
             <img src="img/circuit/Autódromo de Interlagos.png">
             <img src="https://gt-engine.com/gt7/tracks/images/md/interlagos.png">
-            <h2 class="text-3xl font-bold text-white mb-2">Autodromo de Interlagos</h2>
+            <h2 class="text-3xl font-bold text-[#d0ff02] mb-2">Autodromo de Interlagos</h2>
             <p class="text-gray-400">Brasile</p>
             <img src="https://flagcdn.com/br.svg" width="25">
             <img src="img/car/Chevrolet Corvette CX.R VGT Concept.png">
@@ -101,7 +103,7 @@
             <div class="absolute left-1/2 -translate-x-1/2 top-3 w-48 h-2 rounded-full bg-red-500 shadow-lg"></div>
             <img src="img/circuit/Autopolis International Racing Course.png">
             <img src="https://gt-engine.com/gt7/tracks/images/md/autopolis.png">
-            <h2 class="text-3xl font-bold text-white mb-2">Autopolis International Racing Course</h2>
+            <h2 class="text-3xl font-bold text-[#d0ff02] mb-2">Autopolis International Racing Course</h2>
             <p class="text-gray-400">Giappone</p>
             <img src="https://flagcdn.com/jp.svg" width="25">
             <img src="img/car/Honda NSX CONCEPT-GT '16.png">
@@ -115,7 +117,7 @@
             <div class="absolute left-1/2 -translate-x-1/2 top-3 w-48 h-2 rounded-full bg-red-500 shadow-lg"></div>
             <img src="img/circuit/Circuit de Barcelona-Catalunya.png">
             <img src="https://gt-engine.com/gt7/tracks/images/md/barcelona-catalunya-gp.png">
-            <h2 class="text-3xl font-bold text-white mb-2">Circuit de Barcelona-Catalunya</h2>
+            <h2 class="text-3xl font-bold text-[#d0ff02] mb-2">Circuit de Barcelona-Catalunya</h2>
             <p class="text-gray-400">Spagna</p>
             <img src="https://flagcdn.com/es.svg" width="25">
             <img src="img/car/Pagani Zonda R '09.png">
@@ -129,12 +131,12 @@
             <div class="absolute left-1/2 -translate-x-1/2 top-3 w-48 h-2 rounded-full bg-red-500 shadow-lg"></div>
             <img src="img/circuit/Circuit de Sainte-Croix.png">
             <img src="https://gt-engine.com/gt7/tracks/images/md/sainte-croix-a.png">
-            <h2 class="text-3xl font-bold text-white mb-2">Circuit de Sainte-Croix</h2>
+            <h2 class="text-3xl font-bold text-[#d0ff02] mb-2">Circuit de Sainte-Croix</h2>
             <p class="text-gray-400">Francia</p>
             <img src="https://flagcdn.com/fr.svg" width="25">
             <img src="img/car/Renault Mégane Trophy '11.png">
             <img src="img/logo/renault.png" class="h-8 mr-1">
-            <h2 class="text-xl font-bold text-white mb-2">Renault</h2>
+            <h2 class="text-xl font-bold text-white">Renault</h2>
             <p class="text-gray-400">Mégane Trophy '11</p>
         </a>
         
@@ -143,12 +145,12 @@
             <div class="absolute left-1/2 -translate-x-1/2 top-3 w-48 h-2 rounded-full bg-red-500 shadow-lg"></div>
             <img src="img/circuit/Circuit de Spa-Francorchamps.png">
             <img src="https://gt-engine.com/gt7/tracks/images/md/spa-francorchamps.png">
-            <h2 class="text-3xl font-bold text-white mb-2">Circuit de Spa-Francorchamps</h2>
+            <h2 class="text-3xl font-bold text-[#d0ff02] mb-2">Circuit de Spa-Francorchamps</h2>
             <p class="text-gray-400">Belgio</p>
             <img src="https://flagcdn.com/be.svg" width="25">
             <img src="img/car/Porsche 911 GT3 RS (992) '22.png">
             <img src="img/logo/porsche.png" class="h-8 mr-1">
-            <h2 class="text-xl font-bold text-white mb-2">Porsche</h2>
+            <h2 class="text-xl font-bold text-white">Porsche</h2>
             <p class="text-gray-400">911 GT3 RS (992) '22</p>
         </a>
         
@@ -157,12 +159,12 @@
             <div class="absolute left-1/2 -translate-x-1/2 top-3 w-48 h-2 rounded-full bg-red-500 shadow-lg"></div>
             <img src="img/circuit/Circuito 24 Ore di Le Mans.png">
             <img src="https://gt-engine.com/gt7/tracks/images/md/24-heures-du-mans.png">
-            <h2 class="text-3xl font-bold text-white mb-2">Circuito 24 Ore di Le Mans</h2>
+            <h2 class="text-3xl font-bold text-[#d0ff02] mb-2">Circuito 24 Ore di Le Mans</h2>
             <p class="text-gray-400">Francia</p>
             <img src="https://flagcdn.com/fr.svg" width="25">
             <img src="img/car/Alpine VGT Race.png">
             <img src="img/logo/alpine.png" class="h-8 mr-1">
-            <h2 class="text-xl font-bold text-white mb-2">Alpine</h2>
+            <h2 class="text-xl font-bold text-white">Alpine</h2>
             <p class="text-gray-400">VGT Race</p>
         </a>
         
@@ -171,12 +173,12 @@
             <div class="absolute left-1/2 -translate-x-1/2 top-3 w-48 h-2 rounded-full bg-red-500 shadow-lg"></div>
             <img src="img/circuit/Daytona Circuit.png">
             <img src="https://gt-engine.com/gt7/tracks/images/md/daytona-road.png">
-            <h2 class="text-3xl font-bold text-white mb-2">Daytona Circuit</h2>
+            <h2 class="text-3xl font-bold text-[#d0ff02] mb-2">Daytona Circuit</h2>
             <p class="text-gray-400">USA</p>
             <img src="https://flagcdn.com/us.svg" width="25">
             <img src="img/car/Ford GT Race Car '18.png">
             <img src="img/logo/ford.png" class="h-8 mr-1">
-            <h2 class="text-xl font-bold text-white mb-2">Ford</h2>
+            <h2 class="text-xl font-bold text-white">Ford</h2>
             <p class="text-gray-400">GT Race Car '18</p>
         </a>
         
@@ -185,12 +187,12 @@
             <div class="absolute left-1/2 -translate-x-1/2 top-3 w-48 h-2 rounded-full bg-red-500 shadow-lg"></div>
             <img src="img/circuit/Deep Forest Raceway.png">
             <img src="https://gt-engine.com/gt7/tracks/images/md/deep-forest.png">
-            <h2 class="text-3xl font-bold text-white mb-2">Deep Forest Raceway</h2>
+            <h2 class="text-3xl font-bold text-[#d0ff02] mb-2">Deep Forest Raceway</h2>
             <p class="text-gray-400">Giappone</p>
             <img src="https://flagcdn.com/jp.svg" width="25">
             <img src="img/car/Mazda RX-Vision GT3 Concept.png">
             <img src="img/logo/mazda.png" class="h-8 mr-1">
-            <h2 class="text-xl font-bold text-white mb-2">Mazda</h2>
+            <h2 class="text-xl font-bold text-white">Mazda</h2>
             <p class="text-gray-400">RX-Vision GT3 Concept</p>
         </a>
         
@@ -199,12 +201,12 @@
             <div class="absolute left-1/2 -translate-x-1/2 top-3 w-48 h-2 rounded-full bg-red-500 shadow-lg"></div>
             <img src="img/circuit/Dragon Trail.png">
             <img src="https://gt-engine.com/gt7/tracks/images/md/dragon-trail-seaside.png">
-            <h2 class="text-3xl font-bold text-white mb-2">Dragon Trail</h2>
+            <h2 class="text-3xl font-bold text-[#d0ff02] mb-2">Dragon Trail</h2>
             <p class="text-gray-400">Croazia</p>
             <img src="https://flagcdn.com/hr.svg" width="25">
             <img src="img/car/Audi R8 LMS Evo '19.png">
             <img src="img/logo/audi.png" class="h-8 mr-1">
-            <h2 class="text-xl font-bold text-white mb-2">Audi</h2>
+            <h2 class="text-xl font-bold text-white">Audi</h2>
             <p class="text-gray-400">R8 LMS Evo '19</p>
         </a>
         
@@ -213,12 +215,12 @@
             <div class="absolute left-1/2 -translate-x-1/2 top-3 w-48 h-2 rounded-full bg-red-500 shadow-lg"></div>
             <img src="img/circuit/Eiger Nordwand.png">
             <img src="https://gt-engine.com/gt7/tracks/images/md/eiger-nordwand.png">
-            <h2 class="text-3xl font-bold text-white mb-2">Eiger Nordwand</h2>
+            <h2 class="text-3xl font-bold text-[#d0ff02] mb-2">Eiger Nordwand</h2>
             <p class="text-gray-400">Svizzera</p>
             <img src="https://flagcdn.com/ch.svg" width="25">
             <img src="img/car/KTM X-BOW R '12.png">
             <img src="img/logo/ktm.png" class="h-8 mr-1">
-            <h2 class="text-xl font-bold text-white mb-2">KTM</h2>
+            <h2 class="text-xl font-bold text-white">KTM</h2>
             <p class="text-gray-400">X-BOW R '12</p>
         </a>
         
@@ -227,12 +229,12 @@
             <div class="absolute left-1/2 -translate-x-1/2 top-3 w-48 h-2 rounded-full bg-red-500 shadow-lg"></div>
             <img src="img/circuit/Fuji International Speedway.png">
             <img src="https://gt-engine.com/gt7/tracks/images/md/fuji.png">
-            <h2 class="text-3xl font-bold text-white mb-2">Fuji International Speedway</h2>
+            <h2 class="text-3xl font-bold text-[#d0ff02] mb-2">Fuji International Speedway</h2>
             <p class="text-gray-400">Giappone</p>
             <img src="https://flagcdn.com/jp.svg" width="25">
             <img src="img/car/Toyota FT-1 VGT (Gr.3).png">
             <img src="img/logo/toyota.png" class="h-8 mr-1">
-            <h2 class="text-xl font-bold text-white mb-2">Toyota</h2>
+            <h2 class="text-xl font-bold text-white">Toyota</h2>
             <p class="text-gray-400">FT-1 VGT (Gr.3)</p>
         </a>
         
@@ -241,12 +243,12 @@
             <div class="absolute left-1/2 -translate-x-1/2 top-3 w-48 h-2 rounded-full bg-red-500 shadow-lg"></div>
             <img src="img/circuit/Grand Valley.png">
             <img src="https://gt-engine.com/gt7/tracks/images/md/grand-valley-highway-1.png">
-            <h2 class="text-3xl font-bold text-white mb-2">Grand Valley</h2>
+            <h2 class="text-3xl font-bold text-[#d0ff02] mb-2">Grand Valley</h2>
             <p class="text-gray-400">USA</p>
             <img src="https://flagcdn.com/us.svg" width="25">
             <img src="img/car/Chevrolet Corvette C7 Gr.3.png">
             <img src="img/logo/chevrolet.png" class="h-8 mr-1">
-            <h2 class="text-xl font-bold text-white mb-2">Chevrolet</h2>
+            <h2 class="text-xl font-bold text-white">Chevrolet</h2>
             <p class="text-gray-400">Corvette C7 Gr.3</p>
         </a>
         
@@ -255,12 +257,12 @@
             <div class="absolute left-1/2 -translate-x-1/2 top-3 w-48 h-2 rounded-full bg-red-500 shadow-lg"></div>
             <img src="img/circuit/High Speed Ring.png">
             <img src="https://gt-engine.com/gt7/tracks/images/md/high-speed-ring.png">
-            <h2 class="text-3xl font-bold text-white mb-2">High Speed Ring</h2>
+            <h2 class="text-3xl font-bold text-[#d0ff02] mb-2">High Speed Ring</h2>
             <p class="text-gray-400">Giappone</p>
             <img src="https://flagcdn.com/jp.svg" width="25">
             <img src="img/car/Subaru BRZ GT300 '21.png">
             <img src="img/logo/subaru.png" class="h-8 mr-1">
-            <h2 class="text-xl font-bold text-white mb-2">Subaru</h2>
+            <h2 class="text-xl font-bold text-white">Subaru</h2>
             <p class="text-gray-400"></p>
         </a>
         
@@ -269,12 +271,12 @@
             <div class="absolute left-1/2 -translate-x-1/2 top-3 w-48 h-2 rounded-full bg-red-500 shadow-lg"></div>
             <img src="img/circuit/Kyoto Driving Park.png">
             <img src="https://gt-engine.com/gt7/tracks/images/md/kyoto-yamagiwa.png">
-            <h2 class="text-3xl font-bold text-white mb-2">Kyoto Driving Park</h2>
+            <h2 class="text-3xl font-bold text-[#d0ff02] mb-2">Kyoto Driving Park</h2>
             <p class="text-gray-400">Giappone</p>
             <img src="https://flagcdn.com/jp.svg" width="25">
             <img src="img/car/Mazda Atenza Gr.3.png">
             <img src="img/logo/mazda.png" class="h-8 mr-1">
-            <h2 class="text-xl font-bold text-white mb-2">Mazda</h2>
+            <h2 class="text-xl font-bold text-white">Mazda</h2>
             <p class="text-gray-400">Atenza Gr.3</p>
         </a>
         
@@ -283,12 +285,12 @@
             <div class="absolute left-1/2 -translate-x-1/2 top-3 w-48 h-2 rounded-full bg-red-500 shadow-lg"></div>
             <img src="img/circuit/Michelin Raceway Road Atlanta.png">
             <img src="https://gt-engine.com/gt7/tracks/images/md/road-atlanta.png">
-            <h2 class="text-3xl font-bold text-white mb-2">Michelin Raceway Road Atlanta</h2>
+            <h2 class="text-3xl font-bold text-[#d0ff02] mb-2">Michelin Raceway Road Atlanta</h2>
             <p class="text-gray-400">USA</p>
             <img src="https://flagcdn.com/us.svg" width="25">
             <img src="img/car/Chevrolet Camaro ZL1 1LE Package '18.png">
             <img src="img/logo/chevrolet.png" class="h-8 mr-1">
-            <h2 class="text-xl font-bold text-white mb-2">Chevrolet</h2>
+            <h2 class="text-xl font-bold text-white">Chevrolet</h2>
             <p class="text-gray-400">Camaro ZL1 1LE Package '18</p>
         </a>
         
@@ -297,12 +299,12 @@
             <div class="absolute left-1/2 -translate-x-1/2 top-3 w-48 h-2 rounded-full bg-red-500 shadow-lg"></div>
             <img src="img/circuit/Mount Panorama Motor Racing Circuit.png">
             <img src="https://gt-engine.com/gt7/tracks/images/md/mount-panorama.png">
-            <h2 class="text-3xl font-bold text-white mb-2">Mount Panorama Motor Racing Circuit</h2>
+            <h2 class="text-3xl font-bold text-[#d0ff02] mb-2">Mount Panorama Motor Racing Circuit</h2>
             <p class="text-gray-400">Australia</p>
             <img src="https://flagcdn.com/au.svg" width="25">
             <img src="img/car/McLaren P1 GTR '16.png">
             <img src="img/logo/mclaren.png" class="h-8 mr-1">
-            <h2 class="text-xl font-bold text-white mb-2">McLaren</h2>
+            <h2 class="text-xl font-bold text-white">McLaren</h2>
             <p class="text-gray-400">P1 GTR '16</p>
         </a>
         
@@ -311,12 +313,12 @@
             <div class="absolute left-1/2 -translate-x-1/2 top-3 w-48 h-2 rounded-full bg-red-500 shadow-lg"></div>
             <img src="img/circuit/Nürburgring.png">
             <img src="https://gt-engine.com/gt7/tracks/images/md/nurburgring-nordschleife.png">
-            <h2 class="text-3xl font-bold text-white mb-2">Nürburgring Nordschleife</h2>
+            <h2 class="text-3xl font-bold text-[#d0ff02] mb-2">Nürburgring Nordschleife</h2>
             <p class="text-gray-400">Germania</p>
             <img src="https://flagcdn.com/de.svg" width="25">
             <img src="img/car/BMW M6 GT3 Endurance Model '16.png">
             <img src="img/logo/bmw.png" class="h-8 mr-1">
-            <h2 class="text-xl font-bold text-white mb-2">BMW</h2>
+            <h2 class="text-xl font-bold text-white">BMW</h2>
             <p class="text-gray-400">M6 GT3 Endurance Model '16</p>
         </a>
         
@@ -325,12 +327,12 @@
             <div class="absolute left-1/2 -translate-x-1/2 top-3 w-48 h-2 rounded-full bg-red-500 shadow-lg"></div>
             <img src="img/circuit/Nürburgring.png">
             <img src="https://gt-engine.com/gt7/tracks/images/md/nurburgring-gp.png">
-            <h2 class="text-3xl font-bold text-white mb-2">Nürburgring Nordschleife</h2>
+            <h2 class="text-3xl font-bold text-[#d0ff02] mb-2">Nürburgring Nordschleife</h2>
             <p class="text-gray-400">Germania</p>
             <img src="https://flagcdn.com/de.svg" width="25">
             <img src="img/car/Mercedes AMG GT Black Series '20.png">
             <img src="img/logo/amg.png" class="h-8 mr-1">
-            <h2 class="text-xl font-bold text-white mb-2">Mercedes AMG</h2>
+            <h2 class="text-xl font-bold text-white">Mercedes AMG</h2>
             <p class="text-gray-400">GT Black Series '20</p>
         </a>
         
@@ -339,12 +341,12 @@
             <div class="absolute left-1/2 -translate-x-1/2 top-3 w-48 h-2 rounded-full bg-red-500 shadow-lg"></div>
             <img src="img/circuit/Red Bull Ring.png">
             <img src="https://gt-engine.com/gt7/tracks/images/md/red-bull-ring.png">
-            <h2 class="text-3xl font-bold text-white mb-2">Red Bull Ring</h2>
+            <h2 class="text-3xl font-bold text-[#d0ff02] mb-2">Red Bull Ring</h2>
             <p class="text-gray-400">Austria</p>
             <img src="https://flagcdn.com/at.svg" width="25">
             <img src="img/car/Red Bull X2014 Standard.png">
             <img src="img/logo/altro.png" class="h-8 mr-1">
-            <h2 class="text-xl font-bold text-white mb-2">Red Bull</h2>
+            <h2 class="text-xl font-bold text-white">Red Bull</h2>
             <p class="text-gray-400">X2014 Standard</p>
         </a>
         
@@ -353,12 +355,12 @@
             <div class="absolute left-1/2 -translate-x-1/2 top-3 w-48 h-2 rounded-full bg-red-500 shadow-lg"></div>
             <img src="img/circuit/Sardegna Circuit.png">
             <img src="https://gt-engine.com/gt7/tracks/images/md/sardegna-road-a.png">
-            <h2 class="text-3xl font-bold text-white mb-2">Sardegna Circuit</h2>
+            <h2 class="text-3xl font-bold text-[#d0ff02] mb-2">Sardegna Circuit</h2>
             <p class="text-gray-400">Italia</p>
             <img src="https://flagcdn.com/it.svg" width="25">
             <img src="img/car/Alfa Romeo Giulia GTAm '20.png">
             <img src="img/logo/alfa romeo.png" class="h-8 mr-1">
-            <h2 class="text-xl font-bold text-white mb-2">Alfa Romeo</h2>
+            <h2 class="text-xl font-bold text-white">Alfa Romeo</h2>
             <p class="text-gray-400">Giulia GTAm '20</p>
         </a>
         
@@ -367,12 +369,12 @@
             <div class="absolute left-1/2 -translate-x-1/2 top-3 w-48 h-2 rounded-full bg-red-500 shadow-lg"></div>
             <img src="img/circuit/Suzuka Circuit.png">
             <img src="https://gt-engine.com/gt7/tracks/images/md/suzuka.png">
-            <h2 class="text-3xl font-bold text-white mb-2">Suzuka Circuit</h2>
+            <h2 class="text-3xl font-bold text-[#d0ff02] mb-2">Suzuka Circuit</h2>
             <p class="text-gray-400">Giappone</p>
             <img src="https://flagcdn.com/jp.svg" width="25">
             <img src="img/car/Nissan GT-R NISMO GT500 '16.png">
             <img src="img/logo/nissan.png" class="h-8 mr-1">
-            <h2 class="text-xl font-bold text-white mb-2">Nissan</h2>
+            <h2 class="text-xl font-bold text-white">Nissan</h2>
             <p class="text-gray-400">GT-R NISMO GT500 '16</p>
         </a>
         
@@ -381,12 +383,12 @@
             <div class="absolute left-1/2 -translate-x-1/2 top-3 w-48 h-2 rounded-full bg-red-500 shadow-lg"></div>
             <img src="img/circuit/Tokyo Expressway.png">
             <img src="https://gt-engine.com/gt7/tracks/images/md/tokyo-express-east-cw.png">
-            <h2 class="text-3xl font-bold text-white mb-2">Tokyo Expressway</h2>
+            <h2 class="text-3xl font-bold text-[#d0ff02] mb-2">Tokyo Expressway</h2>
             <p class="text-gray-400">Giappone</p>
             <img src="https://flagcdn.com/jp.svg" width="25">
             <img src="img/car/Lexus RC F GT500 '16.png">
             <img src="img/logo/lexus.png" class="h-8 mr-1">
-            <h2 class="text-xl font-bold text-white mb-2">Lexus</h2>
+            <h2 class="text-xl font-bold text-white">Lexus</h2>
             <p class="text-gray-400">RC F GT500 '16</p>
         </a>
         
@@ -395,12 +397,12 @@
             <div class="absolute left-1/2 -translate-x-1/2 top-3 w-48 h-2 rounded-full bg-red-500 shadow-lg"></div>
             <img src="img/circuit/Trial Mountain Circuit.png">
             <img src="https://gt-engine.com/gt7/tracks/images/md/trial-mountain.png">
-            <h2 class="text-3xl font-bold text-white mb-2">Trial Mountain Circuit</h2>
+            <h2 class="text-3xl font-bold text-[#d0ff02] mb-2">Trial Mountain Circuit</h2>
             <p class="text-gray-400">USA</p>
             <img src="https://flagcdn.com/us.svg" width="25">
             <img src="img/car/Ford Mustang Gr.3.png">
             <img src="img/logo/ford.png" class="h-8 mr-1">
-            <h2 class="text-xl font-bold text-white mb-2">Ford</h2>
+            <h2 class="text-xl font-bold text-white">Ford</h2>
             <p class="text-gray-400">Mustang Gr.3</p>
         </a>
         
@@ -409,12 +411,12 @@
             <div class="absolute left-1/2 -translate-x-1/2 top-3 w-48 h-2 rounded-full bg-red-500 shadow-lg"></div>
             <img src="img/circuit/Watkins Glen.png">
             <img src="https://gt-engine.com/gt7/tracks/images/md/watkins-glen-long.png">
-            <h2 class="text-3xl font-bold text-white mb-2">Watkins Glen</h2>
+            <h2 class="text-3xl font-bold text-[#d0ff02] mb-2">Watkins Glen</h2>
             <p class="text-gray-400">USA</p>
             <img src="https://flagcdn.com/us.svg" width="25">
             <img src="img/car/Chevrolet Corvette C8 '20.png">
             <img src="img/logo/chevrolet.png" class="h-8 mr-1">
-            <h2 class="text-xl font-bold text-white mb-2">Chevrolet</h2>
+            <h2 class="text-xl font-bold text-white">Chevrolet</h2>
             <p class="text-gray-400">Corvette C8 '20</p>
         </a>
 
@@ -423,12 +425,12 @@
             <div class="absolute left-1/2 -translate-x-1/2 top-3 w-48 h-2 rounded-full bg-red-500 shadow-lg"></div>
             <img src="img/circuit/Willow Springs International Raceway.png">
             <img src="https://gt-engine.com/gt7/tracks/images/md/willow-springs-big-willow.png">
-            <h2 class="text-3xl font-bold text-white mb-2">Willow Springs International Raceway</h2>
+            <h2 class="text-3xl font-bold text-[#d0ff02] mb-2">Willow Springs International Raceway</h2>
             <p class="text-gray-400">USA</p>
             <img src="https://flagcdn.com/us.svg" width="25">
             <img src="img/car/Dodge Viper SRT GT3-R '15.png">
             <img src="img/logo/dodge.png" class="h-8 mr-1">
-            <h2 class="text-xl font-bold text-white mb-2">Dodge</h2>
+            <h2 class="text-xl font-bold text-white">Dodge</h2>
             <p class="text-gray-400">Viper SRT GT3-R '15</p>
         </a>
         
@@ -436,22 +438,22 @@
 
     <!-- Modale per la Classifica (nascosta di default) -->
     <div id="leaderboard-modal" class="modal-overlay hidden fixed inset-0 z-50 flex items-center justify-center p-4">
-        <div class="modal-content w-full max-w-4xl bg-gray-800 rounded-2xl shadow-xl p-8 border border-gray-700 relative">
+        <div class="modal-content w-full max-w-4xl bg-black rounded-2xl shadow-xl p-8 border border-gray-700 relative">
             <button id="close-modal-btn" class="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
                 </svg>
             </button>
-            <h2 id="modal-title" class="text-4xl font-extrabold text-white text-center"></h2>
+            <h2 id="modal-title" class="text-4xl font-extrabold text-[#d0ff02] text-center"></h2>
             <p id="modal-subtitle" class="text-lg text-gray-400 text-center mb-6"></p>
             <div class="overflow-x-auto rounded-lg">
                 <table class="min-w-full divide-y divide-gray-700">
                     <thead class="bg-gray-900 header-gradient">
                         <tr>
-                            <th scope="col" class="px-6 py-4 text-center text-sm font-bold text-white uppercase tracking-wider rounded-tl-lg">#</th>
-                            <th scope="col" class="px-6 py-4 text-left text-sm font-bold text-white uppercase tracking-wider">Pilota</th>
-                            <th scope="col" class="px-6 py-4 text-left text-sm font-bold text-white uppercase tracking-wider">Tempo</th>
-                            <th scope="col" class="px-6 py-4 text-left text-sm font-bold text-white uppercase tracking-wider rounded-tr-lg">Data e Ora</th>
+                            <th scope="col" class="px-6 py-4 text-center text-sm font-bold text-[#d0ff02] uppercase tracking-wider rounded-tl-lg">#</th>
+                            <th scope="col" class="px-6 py-4 text-left text-sm font-bold text-[#d0ff02] uppercase tracking-wider">Pilota</th>
+                            <th scope="col" class="px-6 py-4 text-left text-sm font-bold text-[#d0ff02] uppercase tracking-wider">Tempo</th>
+                            <th scope="col" class="px-6 py-4 text-left text-sm font-bold text-[#d0ff02] uppercase tracking-wider rounded-tr-lg">Data e Ora</th>
                         </tr>
                     </thead>
                     <tbody id="modal-table-body" class="bg-gray-800 divide-y divide-gray-700">
@@ -466,7 +468,7 @@
         <p>&copy; 2025 GT7 Leaderboard. Tutti i diritti riservati.</p>
     </footer>
     <!-- Torna su -->
-    <button id="back-to-top" class="fixed bottom-6 right-6 bg-red-600 text-white p-3 rounded-full shadow-lg hover:bg-red-700 transition-colors hidden" title="Torna su">
+    <button id="back-to-top" class="fixed bottom-6 right-6 bg-black text-[#d0ff02] p-3 rounded-full shadow-lg hover:bg-[#d0ff02] hover:text-black transition-colors hidden" title="Torna su">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
         </svg>
@@ -488,7 +490,7 @@
     </script>
 
     <!-- Lettera alfabeto su schermo per scroll rapido -->
-    <div id="alphabet-sidebar" class="fixed top-1/2 right-0 transform -translate-y-1/2 bg-gray-800 bg-opacity-75 rounded-l-lg p-2 space-y-1 z-40">
+    <div id="alphabet-sidebar" class="fixed top-1/2 right-0 transform -translate-y-1/2 bg-black rounded-l-lg p-2 space-y-1 z-40">
         <!-- Lettere generate dinamicamente -->
     </div>
     <script>
@@ -501,7 +503,7 @@
         uniqueLetters.forEach(letter => {
             const letterBtn = document.createElement('button');
             letterBtn.textContent = letter;
-            letterBtn.className = 'text-white font-bold p-2 hover:bg-red-600 rounded transition-colors w-8 h-8 flex items-center justify-center';
+            letterBtn.className = 'text-[#d0ff02] font-bold p-2 hover:text-black hover:bg-[#d0ff02] rounded transition-colors w-8 h-8 flex items-center justify-center';
             letterBtn.addEventListener('click', () => {
                 // Trova la prima card il cui titolo inizia con la lettera selezionata
                 const targetCard = Array.from(document.querySelectorAll('.circuit-card h2:first-of-type')).find(h2 => h2.textContent.trim().toUpperCase().startsWith(letter));
@@ -753,7 +755,7 @@
                     const glowClass = index === 0 ? 'pulsing-glow' : '';
                     row.className = `border-b border-gray-700 hover:bg-gray-700 ${index % 2 === 0 ? 'bg-gray-800' : 'bg-gray-900'} ${glowClass}`;
                     row.innerHTML = `
-                        <td class="px-6 py-4 whitespace-nowrap text-center text-sm font-medium text-white">${index + 1}</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-center text-sm font-medium text-[#d0ff02]">${index + 1}</td>
                         <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-300">${entry.pilota}</td>
                         <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-300">${formatTime(entry.time)}</td>
                         <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-300">${entry.data} - ${entry.ora}</td>
@@ -782,7 +784,6 @@
             closeModalBtn.addEventListener('click', () => {
                 modal.classList.add('hidden');
             });
-            
             // Chiude il modale cliccando fuori dal suo contenuto
             modal.addEventListener('click', (e) => {
                 if (e.target === modal) {
