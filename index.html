@@ -142,7 +142,7 @@
         
         <!-- Circuit de Spa-Francorchamps -->
         <a href="#" data-circuit="spa" class="circuit-card bg-gray-800 rounded-2xl shadow-xl p-6 flex flex-col items-center text-center border border-gray-700 relative">
-            <div class="absolute left-1/2 -translate-x-1/2 top-3 w-48 h-2 rounded-full bg-red-500 shadow-lg"></div>
+            <div class="absolute left-1/2 -translate-x-1/2 top-3 w-48 h-2 rounded-full bg-green-500 shadow-lg"></div>
             <img src="img/circuit/Circuit de Spa-Francorchamps.png">
             <img src="https://gt-engine.com/gt7/tracks/images/md/spa-francorchamps.png">
             <h2 class="text-3xl font-bold text-[#d0ff02] mb-2">Circuit de Spa-Francorchamps</h2>
@@ -212,7 +212,7 @@
         
         <!-- Eiger Nordwand -->
         <a href="#" data-circuit="eiger-nordwand" class="circuit-card bg-gray-800 rounded-2xl shadow-xl p-6 flex flex-col items-center text-center border border-gray-700 relative">
-            <div class="absolute left-1/2 -translate-x-1/2 top-3 w-48 h-2 rounded-full bg-red-500 shadow-lg"></div>
+            <div class="absolute left-1/2 -translate-x-1/2 top-3 w-48 h-2 rounded-full bg-green-500 shadow-lg"></div>
             <img src="img/circuit/Eiger Nordwand.png">
             <img src="https://gt-engine.com/gt7/tracks/images/md/eiger-nordwand.png">
             <h2 class="text-3xl font-bold text-[#d0ff02] mb-2">Eiger Nordwand</h2>
@@ -546,16 +546,16 @@
                 title: "Classifica",
                 subtitle: "Autodromo Lago Maggiore",
                 data: [
-                    { pilota: "Axel", time: parseTime("01:54.588"), data: "00/00/0000", ora: "11:00" },
-                    { pilota: "Error", time: parseTime("01:55.366"), data: "00/00/0000", ora: "12:30" }
+                    { pilota: "Axel", time: parseTime("01:54.588"), data: "00/00/0000", ora: "00:00" },
+                    { pilota: "Error", time: parseTime("01:55.366"), data: "00/00/0000", ora: "00:00" }
                 ]
             },
             monza: {
                 title: "Classifica",
                 subtitle: "Autodromo Nazionale Monza",
                 data: [
-                    { pilota: "Axel", time: parseTime("01:49.320"), data: "00/00/0000", ora: "11:00" },
-                    { pilota: "Error", time: parseTime("01:50.163"), data: "00/00/0000", ora: "12:30" }
+                    { pilota: "Axel", time: parseTime("01:49.320"), data: "00/00/0000", ora: "00:00" },
+                    { pilota: "Error", time: parseTime("01:50.163"), data: "00/00/0000", ora: "00:00" }
                 ]
             },
             interlagos: {
@@ -590,7 +590,8 @@
                 title: "Classifica",
                 subtitle: "Circuit de Spa-Francorchamps",
                 data: [
-                    { pilota: "", time: parseTime("00:00.000"), data: "00/00/0000", ora: "00:00" }
+                    { pilota: "Axel", time: parseTime("02:28.643"), data: "00/00/0000", ora: "00:00" },
+                    { pilota: "Error", time: parseTime("02:29.854"), data: "00/00/0000", ora: "00:00" }
                 ]
             },
             lemans: {
@@ -625,7 +626,8 @@
                 title: "Classifica",
                 subtitle: "Eiger Nordwand",
                 data: [
-                    { pilota: "", time: parseTime("00:00.000"), data: "00/00/0000", ora: "00:00" }
+                    { pilota: "Axel", time: parseTime("01:09.713"), data: "00/00/0000", ora: "00:00" },
+                    { pilota: "Error", time: parseTime("01:11.375"), data: "00/00/0000", ora: "00:00" }
                 ]
             },
             fuji: {
@@ -793,4 +795,5 @@
         });
     </script>
 </body>
+
 </html>
