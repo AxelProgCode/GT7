@@ -453,7 +453,7 @@
                             <th scope="col" class="px-6 py-4 text-center text-sm font-bold text-[#d0ff02] uppercase tracking-wider rounded-tl-lg">#</th>
                             <th scope="col" class="px-6 py-4 text-left text-sm font-bold text-[#d0ff02] uppercase tracking-wider">Pilota</th>
                             <th scope="col" class="px-6 py-4 text-left text-sm font-bold text-[#d0ff02] uppercase tracking-wider">Tempo</th>
-                            <th scope="col" class="px-6 py-4 text-left text-sm font-bold text-[#d0ff02] uppercase tracking-wider rounded-tr-lg">Data e Ora</th>
+                            <th scope="col" class="px-6 py-4 text-left text-sm font-bold text-[#d0ff02] uppercase tracking-wider rounded-tr-lg">Gap</th>
                         </tr>
                     </thead>
                     <tbody id="modal-table-body" class="bg-gray-800 divide-y divide-gray-700">
@@ -533,217 +533,246 @@
             return `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}.${String(milliseconds).padStart(3, '0')}`;
         };
 
+        // Funzione per formattare i millisecondi in una stringa di distacco (+SS.mmm)
+        // Restituisce "---" per il primo, e "+MM:SS.mmm" o "+SS.mmm" altrimenti.
+        const formatGap = (milliseconds) => {
+            const absMilliseconds = Math.abs(milliseconds);
+            
+            const minutes = Math.floor(absMilliseconds / 60000);
+            const seconds = Math.floor((absMilliseconds % 60000) / 1000);
+            const mmm = absMilliseconds % 1000;
+            
+            const formattedTime = (minutes > 0) 
+                ? `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}.${String(mmm).padStart(3, '0')}`
+                : `${String(seconds).padStart(2, '0')}.${String(mmm).padStart(3, '0')}`;
+            
+            // Se il distacco è zero (solo per il leader in questo contesto), restituisce "---"
+            return (milliseconds === 0) ? "+00.000" : `+${formattedTime}`;
+        };
+
         // Dati della classifica per ogni circuito
         const leaderboards = {
             alsace: {
                 title: "Classifica",
                 subtitle: "Alsace Village",
                 data: [
-                    { pilota: "Axel", time: parseTime("01:38.142"), data: "00/00/0000", ora: "00:00" },
-                    { pilota: "Error", time: parseTime("01:39.504"), data: "00/00/0000", ora: "00:00" }
+                    { pilota: "Axel", time: parseTime("01:38.142") },
+                    { pilota: "Error", time: parseTime("01:39.504") }
                 ]
             },
             "lago-maggiore": {
                 title: "Classifica",
                 subtitle: "Autodromo Lago Maggiore",
                 data: [
-                    { pilota: "Axel", time: parseTime("01:54.588"), data: "00/00/0000", ora: "00:00" },
-                    { pilota: "Error", time: parseTime("01:55.366"), data: "00/00/0000", ora: "00:00" }
+                    { pilota: "Axel", time: parseTime("01:54.588") },
+                    { pilota: "Error", time: parseTime("01:55.366") }
                 ]
             },
             monza: {
                 title: "Classifica",
                 subtitle: "Autodromo Nazionale Monza",
                 data: [
-                    { pilota: "Axel", time: parseTime("01:49.320"), data: "00/00/0000", ora: "00:00" },
-                    { pilota: "Error", time: parseTime("01:50.163"), data: "00/00/0000", ora: "00:00" }
+                    { pilota: "Axel", time: parseTime("01:49.320") },
+                    { pilota: "Error", time: parseTime("01:50.163") }
                 ]
             },
             interlagos: {
                 title: "Classifica",
                 subtitle: "Autodromo de Interlagos",
                 data: [
-                    { pilota: "Axel", time: parseTime("01:16.680"), data: "00/00/0000", ora: "00:00" },
-                    { pilota: "Error", time: parseTime("01:18.134"), data: "00/00/0000", ora: "00:00" }
+                    { pilota: "Axel", time: parseTime("01:16.680") },
+                    { pilota: "Error", time: parseTime("01:18.134") }
                 ]
             },
             autopolis: {
                 title: "Classifica",
                 subtitle: "Autopolis International Racing Course",
                 data: [
-                    { pilota: "", time: parseTime("00:00.000"), data: "00/00/0000", ora: "00:00" }
+                    { pilota: "", time: parseTime("00:00.000") }
                 ]
             },
             barcelona: {
                 title: "Classifica",
                 subtitle: "Circuit de Barcelona-Catalunya",
                 data: [
-                    { pilota: "", time: parseTime("00:00.000"), data: "00/00/0000", ora: "00:00" }
+                    { pilota: "", time: parseTime("00:00.000") }
                 ]
             },
             "sainte-croix": {
                 title: "Classifica",
                 subtitle: "Circuit de Sainte-Croix",
                 data: [
-                    { pilota: "", time: parseTime("00:00.000"), data: "00/00/0000", ora: "00:00" }
+                    { pilota: "", time: parseTime("00:00.000") }
                 ]
             },
             spa: {
                 title: "Classifica",
                 subtitle: "Circuit de Spa-Francorchamps",
                 data: [
-                    { pilota: "Axel", time: parseTime("02:28.643"), data: "00/00/0000", ora: "00:00" },
-                    { pilota: "Error", time: parseTime("02:29.854"), data: "00/00/0000", ora: "00:00" }
+                    { pilota: "Axel", time: parseTime("02:28.643") },
+                    { pilota: "Error", time: parseTime("02:29.854") }
                 ]
             },
             lemans: {
                 title: "Classifica",
                 subtitle: "Circuito 24 Ore di Le Mans",
                 data: [
-                    { pilota: "Axel", time: parseTime("03:56.190"), data: "00/00/0000", ora: "00:00" },
-                    { pilota: "Error", time: parseTime("03:57.331"), data: "00/00/0000", ora: "00:00" }
+                    { pilota: "Axel", time: parseTime("03:56.190") },
+                    { pilota: "Error", time: parseTime("03:57.331") }
                 ]
             },
             daytona: {
                 title: "Classifica",
                 subtitle: "Daytona Circuit",
                 data: [
-                    { pilota: "", time: parseTime("00:00.000"), data: "00/00/0000", ora: "00:00" }
+                    { pilota: "", time: parseTime("00:00.000") }
                 ]
             },
             "deep-forest": {
                 title: "Classifica",
                 subtitle: "Deep Forest Raceway",
                 data: [
-                    { pilota: "Axel", time: parseTime("01:24.772"), data: "00/00/0000", ora: "00:00" },
-                    { pilota: "Error", time: parseTime("01:27.300"), data: "00/00/0000", ora: "00:00" }
+                    { pilota: "Axel", time: parseTime("01:24.772") },
+                    { pilota: "Error", time: parseTime("01:27.300") }
                 ]
             },
             "dragon-trail": {
                 title: "Classifica",
                 subtitle: "Dragon Trail",
                 data: [
-                    { pilota: "Axel", time: parseTime("01:36.295"), data: "00/00/0000", ora: "00:00" },
-                    { pilota: "Error", time: parseTime("01:36.734"), data: "00/00/0000", ora: "00:00" }
+                    { pilota: "Axel", time: parseTime("01:36.295") },
+                    { pilota: "Error", time: parseTime("01:36.734") }
                 ]
             },
             "eiger-nordwand": {
                 title: "Classifica",
                 subtitle: "Eiger Nordwand",
                 data: [
-                    { pilota: "Axel", time: parseTime("01:09.713"), data: "00/00/0000", ora: "00:00" },
-                    { pilota: "Error", time: parseTime("01:11.375"), data: "00/00/0000", ora: "00:00" }
+                    { pilota: "Axel", time: parseTime("01:09.713") },
+                    { pilota: "Error", time: parseTime("01:11.375") }
                 ]
             },
             fuji: {
                 title: "Classifica",
                 subtitle: "Fuji International Speedway",
                 data: [
-                    { pilota: "Axel", time: parseTime("01:40.119"), data: "00/00/0000", ora: "00:00" },
-                    { pilota: "Error", time: parseTime("01:40.694"), data: "00/00/0000", ora: "00:00" }
+                    { pilota: "Axel", time: parseTime("01:40.119") },
+                    { pilota: "Error", time: parseTime("01:40.694") }
                 ]
             },
             "grand-valley": {
                 title: "Classifica",
                 subtitle: "Grand Valley",
                 data: [
-                    { pilota: "", time: parseTime("00:00.000"), data: "00/00/0000", ora: "00:00" }
+                    { pilota: "", time: parseTime("00:00.000") }
                 ]
             },
             "high-speed-ring": {
                 title: "Classifica",
                 subtitle: "High Speed Ring",
                 data: [
-                    { pilota: "Axel", time: parseTime("01:08.742"), data: "00/00/0000", ora: "00:00" },
-                    { pilota: "Error", time: parseTime("01:09.504"), data: "00/00/0000", ora: "00:00" }
+                    { pilota: "Axel", time: parseTime("01:08.742") },
+                    { pilota: "Error", time: parseTime("01:09.504") }
                 ]
             },
             kyoto: {
                 title: "Classifica",
                 subtitle: "Kyoto Driving Park",
                 data: [
-                    { pilota: "", time: parseTime("00:00.000"), data: "00/00/0000", ora: "00:00" }
+                    { pilota: "", time: parseTime("00:00.000") }
                 ]
             },
             atlanta: {
                 title: "Classifica",
                 subtitle: "Michelin Raceway Road Atlanta",
                 data: [
-                    { pilota: "", time: parseTime("00:00.000"), data: "00/00/0000", ora: "00:00" }
+                    { pilota: "", time: parseTime("00:00.000") }
                 ]
             },
             "mount-panorama": {
                 title: "Classifica",
                 subtitle: "Mount Panorama Motor Racing Circuit",
                 data: [
-                    { pilota: "Axel", time: parseTime("01:58.772"), data: "00/00/0000", ora: "00:00" },
-                    { pilota: "Error", time: parseTime("02:04.662"), data: "00/00/0000", ora: "00:00" }
+                    { pilota: "Axel", time: parseTime("01:58.772") },
+                    { pilota: "Error", time: parseTime("02:04.662") }
                 ]
             },
             "nurburgring": {
                 title: "Classifica",
                 subtitle: "Nürburgring Nordschleife",
                 data: [
-                    { pilota: "", time: parseTime("00:00.000"), data: "00/00/0000", ora: "00:00" }
+                    { pilota: "", time: parseTime("00:00.000") }
                 ]
             },
             "nurburgring-gp": {
                 title: "Classifica",
                 subtitle: "Nürburgring GP",
                 data: [
-                    { pilota: "", time: parseTime("00:00.000"), data: "00/00/0000", ora: "00:00" }
+                    { pilota: "", time: parseTime("00:00.000") }
                 ]
             },
             "red-bull-ring": {
                 title: "Classifica",
                 subtitle: "Red Bull Ring",
                 data: [
-                    { pilota: "", time: parseTime("00:00.000"), data: "00/00/0000", ora: "00:00" }
+                    { pilota: "", time: parseTime("00:00.000") }
                 ]
             },
             sardegna: {
                 title: "Classifica",
                 subtitle: "Sardegna Circuit",
                 data: [
-                    { pilota: "Axel", time: parseTime("01:51.413"), data: "00/00/0000", ora: "00:00" },
-                    { pilota: "Error", time: parseTime("01:54.124"), data: "00/00/0000", ora: "00:00" }
+                    { pilota: "Axel", time: parseTime("01:51.413") },
+                    { pilota: "Error", time: parseTime("01:54.124") }
                 ]
             },
             suzuka: {
                 title: "Classifica",
                 subtitle: "Suzuka Circuit",
                 data: [
-                    { pilota: "", time: parseTime("00:00.000"), data: "00/00/0000", ora: "00:00" }
+                    { pilota: "", time: parseTime("00:00.000") }
                 ]
             },
             tokyo: {
                 title: "Classifica",
                 subtitle: "Tokyo Expressway",
                 data: [
-                    { pilota: "", time: parseTime("00:00.000"), data: "00/00/0000", ora: "00:00" }
+                    { pilota: "", time: parseTime("00:00.000") }
                 ]
             },
             "trial-mountain": {
                 title: "Classifica",
                 subtitle: "Trial Mountain Circuit",
                 data: [
-                    { pilota: "", time: parseTime("00:00.000"), data: "00/00/0000", ora: "00:00" }
+                    { pilota: "", time: parseTime("00:00.000") }
                 ]
             },
             "watkins-glen": {
                 title: "Classifica",
                 subtitle: "Watkins Glen",
                 data: [
-                    { pilota: "", time: parseTime("00:00.000"), data: "00/00/0000", ora: "00:00" }
+                    { pilota: "", time: parseTime("00:00.000") }
                 ]
             },
             "willow-springs": {
                 title: "Classifica",
                 subtitle: "Willow Springs International Raceway",
                 data: [
-                    { pilota: "", time: parseTime("00:00.000"), data: "00/00/0000", ora: "00:00" }
+                    { pilota: "", time: parseTime("00:00.000") }
                 ]
             }
+        };
+
+        /**
+         * Ordina i piloti per tempo.
+         * @param {Array<Object>} data - L'array di piloti. Ogni oggetto deve avere 'time' in millisecondi.
+         * @returns {Array<Object>} L'array di piloti ordinato.
+         */
+        const ordinaPiloti = (data) => {
+            if (!data || data.length === 0) return [];
+            
+            // Ordina per tempo (dal più veloce al più lento)
+            return data.sort((a, b) => a.time - b.time); 
         };
 
         document.addEventListener('DOMContentLoaded', () => {
@@ -757,10 +786,27 @@
             // Funzione per renderizzare la tabella nel modale
             const renderLeaderboard = (circuitData) => {
                 modalTableBody.innerHTML = '';
-                // Ordina i dati per tempo in ordine crescente
-                const sortedTimes = [...circuitData.data].sort((a, b) => a.time - b.time);
+                
+                // 1. Ordina i dati
+                const sortedData = ordinaPiloti(circuitData.data);
+                
+                let previousTime = 0; // Tempo del pilota precedente in millisecondi
+                
+                sortedData.forEach((entry, index) => {
+                    let gap = '';
+                    
+                    if (index === 0) {
+                        // Il primo classificato ha un gap sequenziale di "---"
+                        gap = '+00.000'; 
+                    } else {
+                        // Calcola il distacco rispetto al pilota precedente
+                        const distaccoSequenzialeMillis = entry.time - previousTime;
+                        gap = formatGap(distaccoSequenzialeMillis);
+                    }
 
-                sortedTimes.forEach((entry, index) => {
+                    // Aggiorna il tempo del pilota precedente per la prossima iterazione
+                    previousTime = entry.time;
+
                     const row = document.createElement('tr');
                     // Applica la classe 'pulsing-glow' solo al primo classificato
                     const glowClass = index === 0 ? 'pulsing-glow' : '';
@@ -769,7 +815,8 @@
                         <td class="px-6 py-4 whitespace-nowrap text-center text-sm font-medium text-[#d0ff02]">${index + 1}</td>
                         <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-300">${entry.pilota}</td>
                         <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-300">${formatTime(entry.time)}</td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-300">${entry.data} - ${entry.ora}</td>
+                        
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-300">${gap}</td> 
                     `;
                     modalTableBody.appendChild(row);
                 });
@@ -804,13 +851,4 @@
         });
     </script>
 </body>
-
 </html>
-
-
-
-
-
-
-
-
