@@ -7,29 +7,7 @@
     <title>CLASSIFICHE GT7</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Roboto Mono', monospace;
-        }
-        .bg-gt-background {
-            background: black;
-        }
-        .header-gradient {
-            background: linear-gradient(90deg, black 0%, black 100%);
-        }
-        .circuit-card {
-            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-        }
-        .circuit-card:hover {
-            transform: translateY(-5px);
-            border-color: #d0ff02;
-        }
-        .modal-overlay {
-            background-color: rgba(0, 0, 0, 0.75);
-            -webkit-backdrop-filter: blur(8px);
-            backdrop-filter: blur(8px);
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body class="bg-black-900 text-gray-100 min-h-screen flex flex-col items-center p-4 bg-gt-background">
 
@@ -324,7 +302,7 @@
         
         <!-- Nürburgring GP-->
         <a href="#" data-circuit="nurburgring-gp" class="circuit-card bg-gray-800 rounded-2xl shadow-xl p-6 flex flex-col items-center text-center border border-gray-700 relative">
-            <div class="absolute left-1/2 -translate-x-1/2 top-3 w-48 h-2 rounded-full bg-red-500 shadow-lg"></div>
+            <div class="absolute left-1/2 -translate-x-1/2 top-3 w-48 h-2 rounded-full bg-green-500 shadow-lg"></div>
             <img src="img/circuit/Nürburgring.png">
             <img src="https://gt-engine.com/gt7/tracks/images/md/nurburgring-gp.png">
             <h2 class="text-3xl font-bold text-[#d0ff02] mb-2">Nürburgring Nordschleife</h2>
@@ -712,7 +690,7 @@
                 subtitle: "Nürburgring GP",
                 data: [
                     { pilota: "Axel", time: parseTime("01:58.254") },
-                    { pilota: "Error", time: parseTime("99:99.999") }
+                    { pilota: "Error", time: parseTime("02:00.356") }
                 ]
             },
             "red-bull-ring": {
@@ -855,11 +833,4 @@
         });
     </script>
 </body>
-
 </html>
-
-
-
-
-
-
