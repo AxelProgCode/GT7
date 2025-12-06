@@ -219,6 +219,19 @@
             <h2 class="text-xl font-bold text-white">Porsche</h2>
             <p class="text-gray-400">911 RSR (991) '17</p>
         </a>
+
+        <a href="#" data-circuit="gilles-villeneuve" class="circuit-card bg-gray-800 rounded-2xl shadow-xl p-6 flex flex-col items-center text-center border border-gray-700 relative">
+            <div class="absolute left-1/2 -translate-x-1/2 top-3 w-48 h-2 rounded-full bg-red-500 shadow-lg"></div>
+            <img src="img/circuit/Circuit Gilles Villeneuve.png">
+            <img src="https://gt-engine.com/gt7/tracks/images/md/gilles-villeneuve.png">
+            <h2 class="text-3xl font-bold text-[#d0ff02] mb-2">Circuit Gilles Villeneuve</h2>
+            <p class="text-gray-400">Canada</p>
+            <img src="https://flagcdn.com/ca.svg" width="25">
+            <img src="img/car/Infiniti Concept VGT.png">
+            <img src="img/logo/infiniti.png" class="h-8 mr-1">
+            <h2 class="text-xl font-bold text-white">Infiniti</h2>
+            <p class="text-gray-400">Concept VGT</p>
+        </a>
         
         <!-- Circuito 24 Ore di Le Mans -->
         <a href="#" data-circuit="lemans" class="circuit-card bg-gray-800 rounded-2xl shadow-xl p-6 flex flex-col items-center text-center border border-gray-700 relative">
@@ -404,7 +417,7 @@
         
         <!-- Red Bull Ring -->
         <a href="#" data-circuit="red-bull-ring" class="circuit-card bg-gray-800 rounded-2xl shadow-xl p-6 flex flex-col items-center text-center border border-gray-700 relative">
-            <div class="absolute left-1/2 -translate-x-1/2 top-3 w-48 h-2 rounded-full bg-green-500 shadow-lg"></div>
+            <div class="absolute left-1/2 -translate-x-1/2 top-3 w-48 h-2 rounded-full bg-red-500 shadow-lg"></div>
             <img src="img/circuit/Red Bull Ring.png">
             <img src="https://gt-engine.com/gt7/tracks/images/md/red-bull-ring.png">
             <h2 class="text-3xl font-bold text-[#d0ff02] mb-2">Red Bull Ring</h2>
@@ -498,6 +511,20 @@
             <img src="img/logo/dodge.png" class="h-8 mr-1">
             <h2 class="text-xl font-bold text-white">Dodge</h2>
             <p class="text-gray-400">Viper SRT GT3-R '15</p>
+        </a>
+
+        <!-- Yas Marina Circuit -->
+        <a href="#" data-circuit="yas-marina" class="circuit-card bg-gray-800 rounded-2xl shadow-xl p-6 flex flex-col items-center text-center border border-gray-700 relative">
+            <div class="absolute left-1/2 -translate-x-1/2 top-3 w-48 h-2 rounded-full bg-red-500 shadow-lg"></div>
+            <img src="img/circuit/Yas Marina Circuit.png">
+            <img src="https://gt-engine.com/gt7/tracks/images/md/yas-marina-circuit.png">
+            <h2 class="text-3xl font-bold text-[#d0ff02] mb-2">Yas Marina Circuit</h2>
+            <p class="text-gray-400">Emirati Arabi Uniti</p>
+            <img src="https://flagcdn.com/ae.svg" width="25">
+            <img src="img/car/Ferrari 296 GT3 '23.png">
+            <img src="img/logo/ferrari.png" class="h-8 mr-1">
+            <h2 class="text-xl font-bold text-white">Ferrari</h2>
+            <p class="text-gray-400">296 GT3 '23</p>
         </a>
         
     </div>
@@ -685,6 +712,13 @@
                     { pilota: "Error", time: parseTime("02:18.451") }
                 ]
             },
+            "gilles-villeneuve": {
+                title: "Classifica",
+                subtitle: "Circuit Gilles Villeneuve",
+                data: [
+                    { pilota: "", time: parseTime("00:00.000") }
+                ]
+            },
             lemans: {
                 title: "Classifica",
                 subtitle: "Circuito 24 Ore di Le Mans",
@@ -789,8 +823,7 @@
                 title: "Classifica",
                 subtitle: "Red Bull Ring",
                 data: [
-                    { pilota: "Axel", time: parseTime("01:07.020") },
-                    { pilota: "Error", time: parseTime("01:07.238") }
+                    { pilota: "Axel", time: parseTime("01:07.334") }
                 ]
             },
             sardegna: {
@@ -834,6 +867,13 @@
             "willow-springs": {
                 title: "Classifica",
                 subtitle: "Willow Springs International Raceway",
+                data: [
+                    { pilota: "", time: parseTime("00:00.000") }
+                ]
+            },
+            "yas-marina": {
+                title: "Classifica",
+                subtitle: "Yas Marina Circuit",
                 data: [
                     { pilota: "", time: parseTime("00:00.000") }
                 ]
@@ -928,7 +968,4 @@
         });
     </script>
 </body>
-
 </html>
-
-
