@@ -358,6 +358,20 @@
             <h2 class="text-xl font-bold text-white">Mazda</h2>
             <p class="text-gray-400">Atenza Gr.3</p>
         </a>
+
+        <!-- WeatherTech Raceway Laguna Seca -->
+        <a href="#" data-circuit="laguna-seca" class="circuit-card bg-gray-800 rounded-2xl shadow-xl p-6 flex flex-col items-center text-center border border-gray-700 relative">
+            <div class="absolute left-1/2 -translate-x-1/2 top-3 w-48 h-2 rounded-full bg-red-500 shadow-lg"></div>
+            <img src="img/circuit/Laguna Seca.png">
+            <img src="https://gt-engine.com/gt7/tracks/images/md/laguna-seca.png">
+            <h2 class="text-3xl font-bold text-[#d0ff02] mb-2">WeatherTech Raceway Laguna Seca</h2>
+            <p class="text-gray-400">USA</p>
+            <img src="https://flagcdn.com/us.svg" width="25">
+            <img src="img/car/Porsche 911 GT3 (992) '22.png">
+            <img src="img/logo/porsche.png" class="h-8 mr-1">
+            <h2 class="text-xl font-bold text-white">Porsche</h2>
+            <p class="text-gray-400">911 GT3 (922) '22</p>
+        </a>
         
         <!-- Michelin Raceway Road Atlanta -->
         <a href="#" data-circuit="atlanta" class="circuit-card bg-gray-800 rounded-2xl shadow-xl p-6 flex flex-col items-center text-center border border-gray-700 relative">
@@ -517,7 +531,7 @@
         <a href="#" data-circuit="yas-marina" class="circuit-card bg-gray-800 rounded-2xl shadow-xl p-6 flex flex-col items-center text-center border border-gray-700 relative">
             <div class="absolute left-1/2 -translate-x-1/2 top-3 w-48 h-2 rounded-full bg-green-500 shadow-lg"></div>
             <img src="img/circuit/Yas Marina Circuit.png">
-            <img src="https://gt-engine.com/gt7/tracks/images/md/yas-marina-circuit.png">
+            <img src="https://gt-engine.com/gt7/tracks/images/md/yas-marina.png">
             <h2 class="text-3xl font-bold text-[#d0ff02] mb-2">Yas Marina Circuit</h2>
             <p class="text-gray-400">Emirati Arabi Uniti</p>
             <img src="https://flagcdn.com/ae.svg" width="25">
@@ -685,7 +699,7 @@
                 subtitle: "Autopolis International Racing Course",
                 data: [
                     { pilota: "Axel", time: parseTime("01:36.411") },
-                    { pilota: "Error", time: parseTime("01:38.673") }
+                    { pilota: "Error", time: parseTime("01:38.754") }
                 ]
             },
             barcelona: {
@@ -716,7 +730,7 @@
                 title: "Classifica",
                 subtitle: "Circuit Gilles Villeneuve",
                 data: [
-                    { pilota: "Axel", time: parseTime("01:26.345") }
+                    { pilota: "", time: parseTime("00:00.000") }
                 ]
             },
             lemans: {
@@ -746,8 +760,8 @@
                 title: "Classifica",
                 subtitle: "Dragon Trail",
                 data: [
-                    { pilota: "Axel", time: parseTime("01:35.128") },
-                    { pilota: "Error", time: parseTime("01:35.542") }
+                    { pilota: "Axel", time: parseTime("01:35.846") },
+                    { pilota: "Error", time: parseTime("01:36.734") }
                 ]
             },
             "eiger-nordwand": {
@@ -785,6 +799,13 @@
             kyoto: {
                 title: "Classifica",
                 subtitle: "Kyoto Driving Park",
+                data: [
+                    { pilota: "", time: parseTime("00:00.000") }
+                ]
+            },
+            "laguna-seca": {
+                title: "Classifica",
+                subtitle: "WeatherTech Raceway Laguna Seca",
                 data: [
                     { pilota: "", time: parseTime("00:00.000") }
                 ]
@@ -970,6 +991,3 @@
     </script>
 </body>
 </html>
-
-
-
